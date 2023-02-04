@@ -1,0 +1,6 @@
+{
+    "manifest_version": 2,
+    "name": "GonePhishing",
+    "version": "0.0.1",
+    "description": "Detect scam and phishing websites"
+}
