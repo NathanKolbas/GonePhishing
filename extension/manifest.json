@@ -1,6 +1,10 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "GonePhishing",
     "version": "0.0.1",
-    "description": "Detect scam and phishing websites"
+    "description": "Detect scam and phishing websites",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": ""
+    }
 }
