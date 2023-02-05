@@ -3,6 +3,12 @@
     "name": "GonePhishing",
     "version": "0.0.1",
     "description": "Detect scam and phishing websites",
+    "icons": {
+        "16":  "gonephishing.png",
+        "48":  "gonephishing.png",
+        "64":  "gonephishing.png",
+        "128": "gonephishing.png"
+    },
     "action": {
         "default_popup": "index.html",
         "default_title": ""
