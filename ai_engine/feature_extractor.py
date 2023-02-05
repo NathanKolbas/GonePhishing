@@ -380,7 +380,7 @@ class ExtractFeatures:
             #                                                                                            Title, Text)
 
             row = [
-                url,
+                # url,
                 # url-based features
                 urlfe.url_length(url),
                 urlfe.url_length(hostname),
