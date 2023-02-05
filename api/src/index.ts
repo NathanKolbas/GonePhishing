@@ -10,6 +10,7 @@ import helmet from "helmet";
 import { itemsRouter } from "./items/items.router";
 import { errorHandler } from "./middleware/error.middleware";
 import { notFoundHandler } from "./middleware/not-found.middleware";
+import { legacyPhishRouter } from "./legacyPhish/legacyPhish.router";
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ if (!process.env.PORT) {
 }
 
 const PORT: number = parseInt(process.env.PORT as string, 10);
+export const API_KEY: string = process.env.API_KEY as string;
 
 const app = express();
 
@@ -31,6 +33,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use("/api/menu/items", itemsRouter);
+app.use("/api/legacyPhish", legacyPhishRouter);
 
 app.use(errorHandler);
 app.use(notFoundHandler);
