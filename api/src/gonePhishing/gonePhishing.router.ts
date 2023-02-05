@@ -11,7 +11,7 @@ gonePhishingRouter.get("/:url", async (req: Request, res: Response) => {
     const url: string = req.params.url
 
     try {
-        const response = await axios.post(`localhost:8080/${url}`);
+        const response = await axios.post(`localhost:5000/${url}`);
         
         if (response) {
             return res.status(200).send(response);
