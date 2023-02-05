@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --respawn --pretty --transpile-only src/index.ts"
+    "dev": "ts-node-dev --respawn --pretty --transpile-only src/index.ts",
+    "run": "ts-node src/index.ts",
+    "model": "cd ../ai_engine/ && flask --app api run",
+    "run-all": "concurrently --kill-others \"npm run run\" \"npm run model\""
   },
   "keywords": [],
   "author": "",
@@ -22,6 +25,7 @@
     "@types/express": "^4.17.17",
     "@types/helmet": "^4.0.0",
     "@types/node": "^18.11.18",
+    "concurrently": "^7.6.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.9.5"
   }
