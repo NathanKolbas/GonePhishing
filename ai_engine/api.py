@@ -1,3 +1,5 @@
+import json
+
 from flask import Flask
 from feature_extractor import ExtractFeatures
 import run_model as rm
@@ -14,11 +16,11 @@ def run_model(text):
     print(f'Features: {features}')
     result = rm.run_model(features)
     print(f'Result: {result}')
-    
-    if float(result['confidence']) > 0.70:
-        return 'pass'
-    else:
-        return 'not_pass'
+
+    return json.dumps({
+        'phishing': True if float(result['confidence']) > 0.70 else False,
+        'confidence': result['confidence']
+    })
 
 
 if __name__ == "__main__":

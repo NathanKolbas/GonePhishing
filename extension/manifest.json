@@ -25,6 +25,26 @@
             "js": [
                 "content.js"
             ]
+        },
+        {
+            "matches": [
+                "https://www.google.com/search*"
+            ],
+            "js": [
+                "google.js"
+            ]
+        },
+        {
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+            ],
+            "exclude_matches": [
+                "https://www.google.com/search*"
+            ],
+            "js": [
+                "linkChecker.js"
+            ]
         }
     ]
 }
