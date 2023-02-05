@@ -14,7 +14,11 @@ def run_model(text):
     print(f'Features: {features}')
     result = rm.run_model(features)
     print(f'Result: {result}')
-    return result
+    
+    if float(result['confidence']) > 0.70:
+        return 'pass'
+    else:
+        return 'not_pass'
 
 
 if __name__ == "__main__":
